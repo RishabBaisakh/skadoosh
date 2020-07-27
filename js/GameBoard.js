@@ -77,6 +77,8 @@ export default class GameBoard {
     clearTimeout(this.timex);
     this.seconds = 0;
     $("#elapsedTime").html(this.seconds);
+    this.matchCount = 0;
+    $("#matchCount").html(this.matchCount);
   }
 
   updateHighScore() {

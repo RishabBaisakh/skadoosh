@@ -62,8 +62,6 @@ export default class GameArea {
       }
     } else {
       this.anchorObjMatchingInProgress = anchorObj;
-      //   console.log(this.anchorObjMatchingInProgress);
-      //   this.anchorObjMatchingInProgress.classList.add("disabled");
       this.symbolForMatching = symbol;
       this.matchingInProgress = true;
     }
