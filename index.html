@@ -1,37 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>SKADOOSH</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-        <link rel="stylesheet" href="./css/app.css" />
-    </head>
-    <body>
-        <div id="mount-point">
-            <div class="container">
-                <div class="row">
-                    <div id = "gameHeader" class="col text-center">
-                        SKADOOSH
-                    </div>
-                </div>
-    
-                <div class="row justify-content-center">
-                    <div id="listOfSymbols" class = "d-flex"></div>
-                </div>
-    
-                <div class="row">
-                    <div id = "gameArea" class="col-8 border-right d-flex align-middle"></div>
-                    <div id = "viewPanel" class="col-4 d-flex flex-column justify-content-center align-items-center"></div>
-                </div>
-    
-                <div id = "gameButton" class="col">
-                    <button type="button" class="btn btn-outline-primary btn-block">Start Game</button>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SKADOOSH</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="mount-point">
+      <div class="container">
+        <div class="row">
+          <div id="gameHeader" class="col text-center mt-4">
+            SKADOOSH
+          </div>
         </div>
 
-        <script src="./build/app.bundle.js"></script>
-    </body>
+        <div class="row justify-content-center">
+          <div id="listOfSymbols" class="d-flex"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-8 border-right d-flex align-middle">
+            <div class="row" id="gameArea"></div>
+          </div>
+          <div
+            id="viewPanel"
+            class="col-4 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="row myLabel">Elapsed Time</div>
+            <div class="row">
+              <div class="card">
+                <div class="card-body" id="elapsedTime">0</div>
+              </div>
+            </div>
+            <div class="row myLabel">Match Count</div>
+            <div class="row">
+              <div class="card">
+                <div class="card-body" id="matchCount">0</div>
+              </div>
+            </div>
+            <div class="row myLabel">High Score</div>
+            <div class="row">
+              <div class="card">
+                <div class="card-body" id="highScore">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 mb-4">
+          <button
+            id="gameStartButton"
+            type="button"
+            class="btn btn-primary btn-block"
+          >
+            New Game
+          </button>
+          <button
+            id="gameStopButton"
+            type="button"
+            class="btn btn-danger btn-block"
+          >
+            Stop Game
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./build/app.bundle.js"></script>
+  </body>
 </html>
