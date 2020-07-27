@@ -1,5 +1,46 @@
 html,
 body {
-  margin: 0px auto;
-  height: 100%;
+	margin: 0px auto;
+	height: 100%;
+}
+
+.container {
+	min-height: 500px;
+}
+
+#gameHeader {
+  	font-size: 30px;
+  	font-weight: bold;
+}
+
+#gameArea {
+  	height: 400px;
+}
+
+.myLabel {
+	margin: 10px auto;
+}
+
+#listOfSymbols {
+	margin: 20px auto;
+}
+
+#listOfSymbols > div {
+	margin: 0 20px;
+}
+
+.gameBox > div {
+	background-color: #0c3057;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: #0c3057;
+}
+
+a:hover {
+	color: #0c3057;
+	text-decoration: none;
 }

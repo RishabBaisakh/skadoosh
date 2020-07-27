@@ -1,9 +1,7 @@
-import $ from "jquery";
+import GameBoard from './GameBoard';
 
 window.onload = function () {
-  console.log($("#mount-point"));
-  //   const GameBoard = require("./GameBoard");
-  var gameArea = new require("./GameArea");
-  var gameObj = new require("./GameBoard")(gameArea);
-  gameObj.Init();
+	var gameBoard = new GameBoard();
+
+	gameBoard.init();
 };
