@@ -22,13 +22,27 @@ GameBoard.prototype.Init = function() {
     
     this.symbols = ['A', 'B', 'C','D', 'E', 'F', 'G', 'H'];
     this.inGame = false;
-    this.gameAreaObject = new GameArea(symbols);
+    this.gameAreaObject = new GameArea(this.symbols);
     this.timer = new Timer();
     this.timerLabel = "Time Elapsed";
     this.matchCountLabel = "Match Count";
     this.highScoreLabel = "High Score";
     
-    this.RenderGameBoard(); 
+    this.ShowListOfSymbols();
+    // this.RenderGameBoard(); 
+}
+
+GameBoard.prototype.ShowListOfSymbols = function () {
+    console.log(this.symbols);
+
+    let symbolsArrayDivTemplate = "";
+
+    this.symbols.forEach(symbol => {
+        
+        symbolsArrayDivTemplate += `<div class="card"><div class="card-body">${symbol}</div></div>`;
+    });
+
+    document.getElementById("listOfSymbols").innerHTML = symbolsArrayDivTemplate;
 }
 
 GameBoard.prototype.UpdateElapsedTime = function() {
@@ -45,8 +59,9 @@ GameBoard.prototype.ResetTimer = function() {
 GameBoard.prototype.UpdateHighScore = function() {
     if (this.gameAreaObject.GetMatchedCount())
         document.getElementById("highScore").innerHTML = this.gameAreaObject.GetMatchedCount();
-    else 
-        continue; // Review....!
+    else {
+        // Do something,or just leave. Don't know yet!s
+    }
 }
 
 GameBoard.prototype.UpdateMatchedCount = function() {
@@ -140,9 +155,9 @@ Timer.prototype.GetElaspedTime = function() {
 }
 
 // ---------------------------------------------
+// Just want to add single entry to the actual game object, so that I can encapsulate it in a single independent file....
 window.onload = function() {
     var g = new GameBoard();
     
     g.Init();
 }
-
